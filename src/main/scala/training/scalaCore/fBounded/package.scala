@@ -3,7 +3,7 @@ package training.scalaCore
 package object fBounded {
 
   /**
-   * Often it’s necessary to access a concrete subclass in a (generic) trait.
+   * Sometimes it's necessary to access a concrete subclass in a generic trait.
    * {{{
    *      trait Container extends Ordered[Container]
    *
