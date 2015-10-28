@@ -1,6 +1,8 @@
-package training.catsCore.functor
+package training.scalaCore.transaction
 
-import scala.util.{Success, Failure, Try}
+import training.catsCore.functor.TransactionException
+
+import scala.util.{Failure, Success, Try}
 
 //trait Transaction[T <: CanTransact] {
 //}
