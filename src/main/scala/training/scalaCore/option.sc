@@ -9,7 +9,7 @@ Option[String]("1").toList
 Option[List[String]](List("1", "2")).toList
 
 
-object MessageExctractor {
+object MessageExtractor {
   def unapply(message:  Map[String, String]): Option[(String, String, Option[String])] = {
     for {
       first <- message.get("1")

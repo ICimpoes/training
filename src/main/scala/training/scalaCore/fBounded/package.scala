@@ -3,6 +3,9 @@ package training.scalaCore
 package object fBounded {
 
   /**
+   * AKA ''recursive type'' or ''self-referential type''
+   *
+   * <br/>
    * Sometimes it's necessary to access a concrete subclass in a generic trait.
    * {{{
    *      trait Container extends Ordered[Container]
