@@ -1,7 +1,5 @@
 package training.scalaCore.transaction
 
-import training.catsCore.functor.TransactionException
-
 import scala.util.{Failure, Success, Try}
 
 //trait Transaction[T <: CanTransact] {
@@ -46,6 +44,8 @@ object CanTransact {
 }
 
 case class Account(count: Int, sum: Long)
+
+case class TransactionException(msg: String) extends Exception(msg)
 
 object Implicits {
   implicit class RichAccount(val a: Account) {

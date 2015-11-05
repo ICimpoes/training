@@ -1,7 +1,6 @@
 package training.scalaCore.transaction
 
 import org.scalatest.{Matchers, WordSpec}
-import training.catsCore.functor.TransactionException
 
 import scala.util.{Failure, Success}
 

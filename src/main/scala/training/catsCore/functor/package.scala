@@ -20,7 +20,4 @@ package object functor {
   }
 
   implicit val wrapperFunctor = new WrapperFunctor {}
-
-  case class TransactionException(msg: String) extends Exception(msg)
-
 }
