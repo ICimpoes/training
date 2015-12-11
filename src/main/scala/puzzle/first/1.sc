@@ -1,0 +1,48 @@
+
+
+var list: List[(Char, Int)] = List()
+val s =
+  """iiiiiwwwwwwwwiihhvvvspppppppppaffffiiiiiiiiudddddddddaaahhhhhrrrkkkkkkkkkxxxxxxxdddd
+    |mmmmmmmmyyyoovvvvccccfffffffrrrrrrrrrrrrrtttteeeeeeeccaaaaaaajjjjjjooooooooosssssmmm
+    |rrrrrrrrnnnnnyyyyynnnnnnnnniiiiiillllllaaaaaaeeekkkkkkyyyyyyyyyfftttttttttfffffffuuuu
+    |vvvvvvvsssgggggggguuuuhhmggggggggwwwwwwhhhhhooooossccccccccciiiiiiippptttttttiiiiiii
+    |ffffffuuuuuuuuxiiiiiiillllllimmmxxbbbbbblllvvvvvvvyyyyyyggggggggllllllllluuuuuuuuuk
+    |tttttpppppppppuuuuppppppppddddddtttttttttpppppppgggggggkkrrrrrrrrriiiiittttttxxxxxx
+    |uuuuuuuuugggggggggwwwwppppoooooooooooooowwwwwssppppppppxxxxxxxxxgggsssssnnnkkkkkkkk
+    |eeeeeeeeeeelcccccccckkkkkkkbbbbbbbccccffffffffpppppppddddddddtttttzzzzzrrrrrrrrrrrrrrr
+    |eeewwwwwwwwwyqqqqqqkkkkccccccdlxxxxxxxxdddddgggggqrrrrrreeeeeeeeegggggggiiiifffffff
+    |nnnnnnnxxxxllllllllldddddhhhhhhhhuibbbbbbbyyoobbiijjjmmmmmmmmmdddddddddfvvvnnnnybbbbbbbbb
+    |iiiiiiittttvvvvvvqqqqqqpppppkffsccccqqqqqqqzzzzzssvvhhhhhffffffffffcvvvvvvvvkkkkkkkkkkkkk
+    |iiiiiiiijqdqqqqqqqqxxhhhssssssrruuuuuhhhhgggggggxxxxxaaaaeeezhhhhddddddddvvvvvvvvvooooooo
+    |iiiiiiiiiiiiettttttttteeeeeyyyyyyyyyyyyyyymttttttccccccccbbbqqqqqqqqeeeeeezzzzzmmmmmjjjjjjj
+    |zzzzzzzzzajjjjjjjjjjqqqqqqqqqddddddddddlliiifffffppppppppprrrwwwwwwwwwwwwzzzzzzbbbiiiii
+    |wwwwwwwwwaaaaaaaahhhhhhhlllllqqrrrrrllbdddddddmmmmmmmmmkkkkjjjjjjyyyyyjjjjjjzzzzzzzmmmm
+    |eeeeeeeggggggggeeeeeennnnnnnrrrrwwhhhhhhhppppppppeeezooooooooonnttttteeeeeeeeeeeeeebbb
+    |yyyyyyyyyvvvmmmmmuuuuuvvvvvvvvzzzzzzzzzqqhhddddddfffffffssssqqqbxxxxxxxoooooggggggggcccc
+    |vvvvvvvvzthhhhhhhddgggggwwwkkkkkppppppbbbbhhhhhhrrrrrrrlllllllpppppppgggtdddddkkkkkkkpppz
+    |dddddcccccuwwwwwwwcccceeeeeeeeejjjjjjjjppppjjqqcyyyyyyyyyveeeeeeecczmmmmmmnnnnnpppppppzzzzzz
+    |wwwwwwweewwwfffffffffeeeeeeeyyyjjjjlllllllllppgoohhhhhhhziiiiiiyyyyyyyynnnnnnnngggggggddddddddd
+    |uuuuuuuuggggggmmmmmmmmyyyyyddddddddffffffcccccddddiiiiiiddddddddxxiippptttttttdduuuujjjjjj
+    |uuuuuuuuuqqqquwwwwwkkkksssssssssssssskkkkkkkkkvvvvzhhhhhhhhhhhhhhhsbbbbbbmmmmmmmmmsssssss
+    |yyyyyuufffffffffihhhhhwwwwwwwwwsssssssppttttttttppppppppppppppprrrrrrrbbbbbbbbjjjjjjkk
+    |xxxxxxxxxccccccqqeeeeeefffffrrrrrrrriiiiiccccjjjjjbbbbbfffeeeeeeeyyyyyyyyymmxxxxxxxxxqqqqqq
+    |bbccccrrroooooqnnnddddddddlsssfffffccccccccssllffccccooddddddlllllgggggggggwwwwwwwwaaaaaaaaq
+    |ffffffffuuuuttttttttggkkkkccccccccrrrrrrrrruuuuuuuuuiiiiiyttttrrrrrrrrrrrrrrrbbbbbrrrrrrrr
+    |vvvvnyyyyyyyykkrrrryyyyyyyyyeekkkfffffbbbnnnnbbbbbbbbbddrrreeccrrrrakkkkkkkkkzzzzzzzzddddddd
+    |lllllllllmttttttgggghhuuuuuuuwwwwaaaaaaaaarrrlllllllfffvvvvvnnnnniiccccjjjjffffmmmmmmtnnnnnn
+    |wwwxxxxxxxxxqqqqeeeezeeffftttttttteeeeeeeeebbbbbbbbbbbbbbbcccccccckkkkkkkkkcccclllnnnnnnnnne
+    |jjooxxxxxyylleeeeeeeeedvvvvwwwwwnnnnnnnnggggggggxyyyyyyyyygggrrrrrrrrrpcmkkkkkbbbbbbb
+    |rrrrrrrrrkkkkkkkkttggglllllllcccccccccpppppppxxxiiiiooooooyyyyyyojjjjzxdddssffffffqqqq
+    |fffffffzzzzzzlllllxxxxxxxmmmmmmmmffffffffffddddddddzzzzhhhhhhuiiiiiiwwttaaaaaaaaaccccccccc
+    |ssssskkkkkkrrrrrrrrrppppmmmmmmmmqqqqqwwcccccccbbbbrrrddddddyyyyyyhhhhhqqqqqqqqzzzvvvvvvvvv
+    |rrrrrkkkkkkkjjjjjjssaaaaannnnnbbbiibxxxxhhhhhhhiiiiiqppppppppuuuuuuuuuuurrrrrmiizzzzzppppppppoo
+    |cccccc""".stripMargin
+
+s.foreach { l =>
+  list match {
+    case head :: tail if head._1 == l => list = l -> (head._2 + 1) :: tail
+    case _ => list = l -> 1 :: list
+  }
+}
+Thread.sleep(100)
+list.reverse.foreach(x => print(s"${x._2}${x._1}"))
