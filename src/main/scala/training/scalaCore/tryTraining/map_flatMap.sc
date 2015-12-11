@@ -1,4 +1,4 @@
-import training.tryTraining._
+import training.scalaCore.tryTraining._
 
 import scala.util.{Success, Failure, Try}
 

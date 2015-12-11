@@ -1,4 +1,4 @@
-import training.tryTraining._
+import training.scalaCore.tryTraining._
 
 /*
  * for comprehensions wraps it into Try[_]
