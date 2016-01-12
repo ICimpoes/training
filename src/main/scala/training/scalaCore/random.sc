@@ -1,5 +1,4 @@
 
-
 //def f(x: Int, y: Int) = {
 //  require(x >= y)
 //  x - y
@@ -25,3 +24,12 @@ valMult2(8)
 defMult2(6)
 defMult2(7)
 defMult2(8)
+
+
+case class User(username: String, age: Int)
+val user = User("name", 12)
+
+//name
+user.productElement(0)
+//12
+user.productElement(1)

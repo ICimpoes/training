@@ -1,6 +1,6 @@
 import training.scalaCore.tryTraining._
 
-import scala.util.{Success, Failure, Try}
+import scala.util.{Failure, Success, Try}
 
 //------------- flat map -vs- map -----------------
 /*
@@ -38,3 +38,5 @@ def patMatch(pat: Try[_]) = {
   }
 }
 //------------------------------------------
+
+Try(print("a")).isSuccess
