@@ -2,7 +2,7 @@
 //
 //import scala.annotation.tailrec
 //
-//package object sort {
+package object sort {
 //
 //  /**
 //   * quick sort implementation
@@ -35,4 +35,4 @@
 //    temp(list, Nil)
 //  }
 //
-//}
+}
