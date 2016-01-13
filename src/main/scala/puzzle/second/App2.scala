@@ -1,14 +1,13 @@
-package puzzle
+package puzzle.second
 
 import scala.concurrent.{Await, Future}
-import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 
 object App2 extends App {
 
   val y = 500
 
-  def intFutture(from: Int, to: Int): Future[Int] = {
+  def intFuture(from: Int, to: Int): Future[Int] = {
     Future {
       evaluate(from, to)
     }
@@ -23,7 +22,7 @@ object App2 extends App {
           for (d <- Range(0, until(5))) {
             for (e <- Range(0, until(7))) {
               if (a * 1 + b * 2 + c * 3 + d * 5 + e * 7 == y) {
-//                println(s"1 * $a; 2 * $b; 3 * $c; 5 * $d; 7 * $e")
+                //                println(s"1 * $a; 2 * $b; 3 * $c; 5 * $d; 7 * $e")
                 res += 1
               }
             }
@@ -52,10 +51,10 @@ object App2 extends App {
     println("future")
     val threads = 4
     val t = System.currentTimeMillis()
-    val f1 = intFutture(0, y / threads)
-    val f2 = intFutture(y / threads, 2 * y / threads)
-    val f3 = intFutture(2 * y / threads, 3 * y / threads)
-    val f4 = intFutture(3 * y / threads, y + 1)
+    val f1 = intFuture(0, y / threads)
+    val f2 = intFuture(y / threads, 2 * y / threads)
+    val f3 = intFuture(2 * y / threads, 3 * y / threads)
+    val f4 = intFuture(3 * y / threads, y + 1)
     val result = for {
       a <- f1
       b <- f2
