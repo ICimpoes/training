@@ -15,4 +15,15 @@ object Factorial extends App {
   val factorial = Y[Int, Int](a)
   println(factorial(6))
 
+  println(Factorial2.Y[Int, Int](a)(6))
+
+}
+
+object Factorial2 {
+
+  def Y[T, R](f: (T => R) => T => R): (T => R) = {
+    lazy val yf: T => R = f(x => yf(x))
+    yf
+  }
+
 }
