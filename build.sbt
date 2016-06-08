@@ -13,7 +13,7 @@ lazy val scalaCore = project.in(file("scala-train"))
   .settings(libraryDependencies ++= scalaTest)
 
 lazy val puzzles = project.in(file("puzzles"))
-  .settings(scalaTrainingSettings: _*)
+  .settings(puzzlesSettings: _*)
   .settings(libraryDependencies ++= scalaTest)
 
 lazy val catsTraining = project.in(file("cats-train"))
