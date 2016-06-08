@@ -1,20 +1,17 @@
-name := "training"
+import BuildSettings._
+import Dependencies._
 
-version := "1.0"
+lazy val settings =
+  shellPrompt := { s => Project.extract(s).currentProject.id + " > " }
 
-scalaVersion := "2.11.7"
+lazy val root = project.in(file("."))
+  .aggregate(scalaCore, catsTraining)
+  .settings(commonSettings: _*)
 
-unmanagedSourceDirectories in Compile := List((scalaSource in Compile).value)
+lazy val scalaCore = project.in(file("scala-train"))
+  .settings(scalaTrainingSettings: _*)
+  .settings(libraryDependencies ++= scalaTest)
 
-unmanagedSourceDirectories in Test := List((scalaSource in Test).value)
-
-val catsVersion = "0.2.0"
-val catsAll = "org.spire-math" %% "cats" % catsVersion
-
-val scalaTestVersion = "2.2.4"
-val scalaTest = "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test"
-
-libraryDependencies ++= Seq(
-  catsAll,
-  scalaTest
-)
+lazy val catsTraining = project.in(file("cats-train"))
+  .settings(catsTrainingSettings: _*)
+  .settings(libraryDependencies ++= scalaTest :+ catsAll)
