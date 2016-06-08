@@ -1,4 +1,4 @@
-package puzzle.second
+package second
 
 import scala.concurrent.{Await, Future}
 import scala.concurrent.duration._

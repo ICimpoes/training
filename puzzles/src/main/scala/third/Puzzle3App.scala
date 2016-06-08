@@ -1,4 +1,4 @@
-package puzzle.third
+package third
 
 import scala.annotation.tailrec
 

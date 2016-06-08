@@ -1,4 +1,3 @@
-package puzzle
 
 package object first {
 

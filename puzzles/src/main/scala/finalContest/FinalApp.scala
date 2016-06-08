@@ -1,4 +1,4 @@
-package puzzle.finalContest
+package finalContest
 
 object FinalApp extends App {
   //chars in (binary + 2)

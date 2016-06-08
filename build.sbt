@@ -5,10 +5,14 @@ lazy val settings =
   shellPrompt := { s => Project.extract(s).currentProject.id + " > " }
 
 lazy val root = project.in(file("."))
-  .aggregate(scalaCore, catsTraining)
+  .aggregate(scalaCore, catsTraining, puzzles)
   .settings(commonSettings: _*)
 
 lazy val scalaCore = project.in(file("scala-train"))
+  .settings(scalaTrainingSettings: _*)
+  .settings(libraryDependencies ++= scalaTest)
+
+lazy val puzzles = project.in(file("puzzles"))
   .settings(scalaTrainingSettings: _*)
   .settings(libraryDependencies ++= scalaTest)
 

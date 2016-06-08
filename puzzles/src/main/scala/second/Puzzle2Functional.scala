@@ -1,4 +1,4 @@
-package puzzle
+package first
 
 //object Puzzle2Functional extends App {
 //

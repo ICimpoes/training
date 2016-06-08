@@ -1,4 +1,4 @@
-package puzzle.second
+package second
 
 object Puzzle2Simple extends App {
 

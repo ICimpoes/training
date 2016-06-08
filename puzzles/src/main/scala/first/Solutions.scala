@@ -1,4 +1,4 @@
-package puzzle.first
+package first
 
 object Solutions extends App {
 
