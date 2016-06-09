@@ -7,12 +7,13 @@ object ControlStructure extends App {
   def dont(code: => Unit) = new DontCommand(code)
 
   class DontCommand(code: => Unit) {
-    def unless(condition: => Boolean) =
-      if (condition) code
+    def unless(condition: => Boolean) = {
+      while (!condition) code
+    }
 
     def until(condition: => Boolean) = {
       while (!condition) {}
-      code
+      while (condition) code
     }
   }
 
@@ -21,17 +22,13 @@ object ControlStructure extends App {
   println("a = 6")
 
   import scala.concurrent.ExecutionContext.Implicits.global
-  Future {
-    dont {
-      println("Five")
-    } until (5 == a)
-  } onComplete{
-    case x => x
-  }
+  Future (dont (println("Five")) until (5 == a))
 
-  Thread.sleep(1000)
+  Future (dont (println("Five")) unless (5 == a))
+
+  Thread.sleep(5)
   a = 5
   println("a = 5")
-  Thread.sleep(100)
+  Thread.sleep(5)
 
 }

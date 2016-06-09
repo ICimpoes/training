@@ -8,7 +8,7 @@
       }
     if (i % 2 == 0) newc.toUpper
     else newc.toLower
-}.reverse.foreach {print}
+}.reverse.foreach(print)
 
 
 Thread.sleep(1000)

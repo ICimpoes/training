@@ -19,13 +19,6 @@ object TypeclessApp extends App {
 
     val x: Boolean = 0
 
-    {if (x || "a") {
-      true
-    } else {
-      false
-    }} printMe()
+    x || "a" printMe()
   }
-
-
-
 }

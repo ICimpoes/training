@@ -26,19 +26,11 @@ object CanTruthy {
     import ops.lift
 
     implicit val intTruthy: CanTruthy[Int] = {
-      x: Int =>
-        if (x == 0)
-          false
-        else
-          true
+      x: Int => x != 0
     }
 
     implicit val stringTruthy: CanTruthy[String] = {
-      s: String =>
-        if (s.trim.isEmpty)
-          false
-        else
-          true
+      s: String => s.trim.nonEmpty
     }
   }
 }

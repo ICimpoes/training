@@ -7,11 +7,11 @@ package object typeclass102 {
   sealed trait TrafficLight
   object TrafficLight {
 
-    def red: TrafficLight = Red
+    val red: TrafficLight = Red
 
-    def yellow: TrafficLight = Yellow
+    val yellow: TrafficLight = Yellow
 
-    def green: TrafficLight = Green
+    val green: TrafficLight = Green
 
     case object Red extends TrafficLight
 
