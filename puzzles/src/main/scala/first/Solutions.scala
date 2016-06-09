@@ -1,6 +1,6 @@
 package first
 
-object Solutions extends App {
+object Solutions {
 
   def one(s: String): String = {
     var list: List[(Char, Int)] = List()
@@ -12,9 +12,6 @@ object Solutions extends App {
           list = c -> 1 :: list
       }
     }
-    list.reverse.map(x => s"${x._1}${x._2}") reduce ((x, y) => x + y)
+    list.reverse.map{ case (chr, cnt) => s"$cnt$chr" } reduce ((x, y) => x + y)
   }
-
-  println(one(input))
-
 }
