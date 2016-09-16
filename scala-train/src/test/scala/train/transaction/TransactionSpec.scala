@@ -1,9 +1,7 @@
-package transaction
+package train.transaction
 
 import org.scalatest.{Matchers, WordSpec}
-import train.transaction.Account
 import train.transaction.Implicits._
-import train.transaction._
 
 import scala.util.{Failure, Success}
 

@@ -1,4 +1,4 @@
-package circularReference
+package train.circularReference
 
 import org.scalatest.{Matchers, WordSpec}
 import train.circularReference.ChickenOrEgg._

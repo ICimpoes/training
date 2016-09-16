@@ -1,7 +1,6 @@
-package enums
+package train.enums
 
 import org.scalatest.{Matchers, WordSpec}
-import train.enums.Currency
 
 class CurrencySpec extends WordSpec with Matchers {
 

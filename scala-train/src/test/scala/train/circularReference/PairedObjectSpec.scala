@@ -1,7 +1,6 @@
-package circularReference
+package train.circularReference
 
 import org.scalatest.{Matchers, WordSpec}
-import train.circularReference.PairedObject
 
 class PairedObjectSpec extends WordSpec with Matchers {
 
