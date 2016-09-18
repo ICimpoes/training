@@ -1,6 +1,5 @@
 package demo
 
-import demo.CanAppend.Ops
 import org.scalatest.{Matchers, WordSpec}
 
 class AppendSpec extends WordSpec with Matchers {
@@ -14,18 +13,19 @@ class AppendSpec extends WordSpec with Matchers {
     "work correctly" in {
       person3 |+| person4 shouldBe Person("John and Jane", 55, Gender.???)
     }
-//    "work correctly 2" in {
-//      val ops: Ops[Person] {val typeClassInstance: CanAppend[Person]; val self: Person} = toAllAppend(person3)(Person.personAppend)
-//      ops |+| person4 shouldBe Person("John and Jane", 55, Gender.???)
-//    }
+    "work correctly 2" in {
+      // This is how the implicit conversation works for `person3 |+| person4`
+      val ops = toAllAppend(person3)(Person.personAppend)
+      ops |+| person4 shouldBe Person("John and Jane", 55, Gender.???)
+    }
     "work correctly for strings" in {
-      import CanAppend.implecits._
+      import CanAppend.implicits._
 
       "123" |+| "456" shouldBe "123456"
 
     }
     "work correctly for int" in {
-      import CanAppend.implecits._
+      import CanAppend.implicits._
 
       123 |+| 456 shouldBe 579
 

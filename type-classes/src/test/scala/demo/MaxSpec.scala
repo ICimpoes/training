@@ -18,12 +18,19 @@ class MaxSpec extends WordSpec with Matchers {
 
     }
   }
+  "MaxFunc" should {
+    "return correct value" in {
+      implicit val compare: (Person, Person) => Int = (p1, p2) => p1.age.compareTo(p2.age)
+      maxFunc(person3, person4) shouldBe person3
+
+    }
+  }
   "Max" should {
     "return correct value" in {
       max(person3, person4) shouldBe person3
 
     }
-    "return correct value for custor ord" in {
+    "return correct value for custom ord" in {
       implicit val customOrd = new Comparator[Person] {
         override def compare(t: Person, t1: Person): Int = {
           t1.age.compareTo(t.age)
