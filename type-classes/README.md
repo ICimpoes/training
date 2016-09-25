@@ -1,10 +1,5 @@
 # Type classes and implicits
 
-Type classes
-have been shown to provide a type-safe solution to important
-challenges in software engineering and programming
-languages such as, for example, retroactive extension of
-programs.
 Typeclass design pattern in Scala is a very powerful type-safe solution to important challenges in software engineering as decoupling and retroactive extension.
 Originally implemented as a Haskell language feature, the typeclass pattern in Scala leverages implicits to achieve additional flexibility and control.
 
