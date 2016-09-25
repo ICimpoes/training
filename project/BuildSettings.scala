@@ -19,4 +19,7 @@ object BuildSettings {
   lazy val catsTrainingSettings = commonSettings ++
     Seq(name := "cats-training")
 
+  lazy val typeClassesSettings = commonSettings ++
+    Seq(name := "type-classes")
+
 }
