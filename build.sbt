@@ -4,7 +4,7 @@ import Dependencies._
 lazy val settings =
   shellPrompt := { s => Project.extract(s).currentProject.id + " > " }
 
-lazy val root = project.in(file("."))
+lazy val scalaTraining = project.in(file("."))
   .aggregate(scalaCore, catsTraining, puzzles, typeClasses)
   .settings(commonSettings: _*)
 
