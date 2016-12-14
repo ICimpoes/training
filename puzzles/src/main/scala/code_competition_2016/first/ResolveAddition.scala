@@ -4,6 +4,11 @@ import util._
 
 object ResolveAddition {
 
+  /**
+    * Read sets from file, add them and write result into out file
+    * @param inPath input file path
+    * @param outPath output file path
+    */
   def apply(inPath: String, outPath: String) = {
 
     val fileLines = readFile(inPath)

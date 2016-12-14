@@ -44,16 +44,16 @@ package code_competition_2016.first
   */
 object ElementaryAdd {
 
-  val genStartTime = System.currentTimeMillis()
+  private val startIntToSet = Map(0 -> "{}", 1 -> "{{}}")
+  private val startSetToInt = Map("{}" -> 0, "{{}}" -> 1)
 
-  val startIntToSet = Map(0 -> "{}", 1 -> "{{}}")
-  val startSetToInt = Map("{}" -> 0, "{{}}" -> 1)
-
-  val (_, intToSet, setToInt) = Range(2, 16).foldLeft((List("{}", "{{}}"), startIntToSet, startSetToInt)) {
-    case ((l, i2S, s2I), i) =>
-      val set = s"{${l.mkString(",")}}"
-      (l.:+(set), i2S.+(i -> set), s2I.+(set -> i))
-  }
+  //generate dictionary
+  private val (_, intToSet, setToInt) = Range(2, 16)
+    .foldLeft((List("{}", "{{}}"), startIntToSet, startSetToInt)) {
+      case ((l, i2S, s2I), i) =>
+        val set = s"{${l.mkString(",")}}"
+        (l.:+(set), i2S.+(i -> set), s2I.+(set -> i))
+    }
 
   def apply(f: String, s: String): String = {
     intToSet(setToInt(f) + setToInt(s))
