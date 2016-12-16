@@ -17,9 +17,9 @@ object ResolveAddition {
       val f = fileLines.next()
       val s = fileLines.next()
       val res = ElementaryAdd(f, s)
-      l.:+(res)
+      res :: l
     }
-    writeToFile(outPath, result.mkString("\n"))
+    writeToFile(outPath, result.reverse.mkString("\n"))
   }
 
 }
